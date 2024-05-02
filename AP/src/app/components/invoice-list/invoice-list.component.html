@@ -1,0 +1,39 @@
+<div class="list row p-5">
+    <div class="col-md-12">
+        <h4>Invoice List</h4>
+        <button routerLink="/invoice" class="btn btn-success mb-2" type="button">Create</button>
+        <table class="table table-danger">
+            <thead>
+                <tr>
+                    <th>Invocie Id</th>
+                    <th>Invocie Number</th>
+                    <th>Invoice Date</th>
+                    <th>Invoice Total</th>
+                    <th>PaymentTotal</th>
+                    <th>Credit Total</th>
+                    <th>Invoice Due Date</th>
+                    <th>Payment Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(invoice of invoices; track invoice.invoiceId){
+                    <tr>
+                        <td>{{invoice.invoiceId}}</td>
+                        <td>{{invoice.invoiceNumber}}</td>
+                        <td>{{invoice.invoiceDate}}</td>
+                        <td>{{invoice.invoiceTotal}}</td>
+                        <td>{{invoice.paymentTotal}}</td>
+                        <td>{{invoice.creditTotal}}</td>
+                        <td>{{invoice.invoiceDueDate}}</td>
+                        <td>{{invoice.paymentDate}}</td>
+                        <td>
+                            <button routerLink="/invoices/{{invoice.invoiceId}}" class="btn btn-success ">Edit</button> |
+                            <button (click)="deletecategory(invoice.invoiceId)"  class="btn btn-warning">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

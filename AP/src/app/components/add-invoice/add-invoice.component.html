@@ -1,0 +1,47 @@
+<div class="p-5">
+    <h4 class="text-center text-dark">Add Your New Invoice!</h4>
+    <div class="submit-form">
+        @if(!submitted){
+            <div class="form-group">
+                <label for="name">Invoice Number</label>
+                <input type="number" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.invoiceNumber">
+            </div>
+            <div class="form-group">
+                <label for="name">Invoice  Date</label>
+                <input type="date" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.invoiceDate">
+            </div>
+            <div class="form-group">
+                <label for="name">Invoice Total</label>
+                <input type="number" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.invoiceTotal">
+            </div>
+            <div class="form-group">
+                <label for="name">Payment Total</label>
+                <input type="number" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.paymentTotal">
+            </div>
+            <div class="form-group">
+                <label for="name">Credit Total</label>
+                <input type="number" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.creditTotal">
+            </div>
+            <div class="form-group">
+                <label for="name">Invoice Due Date</label>
+                <input type="date" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.invoiceDueDate">
+            </div>
+            <div class="form-group">
+                <label for="name">Payment  Date</label>
+                <input type="date" class="form-control mt-3" id="name" required [(ngModel)] = "invoice.paymentDate">
+            </div>
+            <div class="mt-3 d-flex gap-2">
+                <button (click)="saveInvoice()" class="btn btn-success ">Create</button>
+                <button routerLink = "/invoices" class="btn btn-dark">Back To List</button>
+            </div>
+
+        }
+        @else {
+          <h3>Invoice was Submitted Successfully</h3>
+          <div class="d-flex gap-2">
+            <button (click)="newInvoice()" class="btn btn-success ">Add More Invocie</button>  
+          <button routerLink = "/invoices" class="btn btn-dark">Back To List</button> 
+          </div>
+        }
+    </div>
+</div>
